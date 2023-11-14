@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!-- Standalone List -->
+    <util:list list-class="java.util.Vector" id="mybestfriends">
+        <value>Raman</value>
+        <value>Suraj</value>
+        <value>Mohan</value>
+
+    </util:list>
+
+    <!-- Standalone Map -->
+    <util:map map-class="java.util.LinkedHashMap" id="mycourses">
+        <entry key="Spring Boot" value="8000"/>
+        <entry key="Django" value="5000"/>
+        <entry key="Laravel" value="6000"/> 
+        <entry key="NodeJs" value="7000"/>
+    </util:map>
+
+    <!-- Standalone Properties -->
+    <util:properties id="dbconfig">
+        <prop key="driver">com.postgresql.Driver.org</prop>
+        <prop key="username">postgres</prop>
+        <prop key="password"> root</prop>
+        <prop key="url">pgsql:jdbc://localhost:8080/database</prop>
+    </util:properties>
+
+
+    <bean class="com.springcore.standalone_collection.Model.Person" name="person1">
+        <property name="friends" ref="mybestfriends"/>
+        <!-- <property name="friends">
+            <ref bean="mybestfriends"/>
+        </property> -->
+    </bean>
+
+    <bean class="com.springcore.standalone_collection.Model.Person" name="person2">
+        <property name="friends" ref="mybestfriends"/>
+        <property name="courses" ref="mycourses"/>
+        <property name="props" ref="dbconfig"/>
+    </bean>
+
+
+
+</beans>
