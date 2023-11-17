@@ -3,11 +3,13 @@ package com.springcore.standalone_collection.Model;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 public class Person {
     private List<String> friends; 
     private Map<String, Integer> courses; 
     private Properties props; 
+    private Set<String> phone; 
 
     public List<String> getFriends() {
         return this.friends;
@@ -34,6 +36,14 @@ public class Person {
     }
 
 
+    public Set<String> getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(Set<String> phone) {
+        this.phone = phone;
+    }
+
 
     @Override
     public String toString() {
@@ -41,8 +51,10 @@ public class Person {
             " friends='" + getFriends() + "'" +
             ", courses='" + getCourses() + "'" +
             ", props='" + getProps() + "'" +
+            ", phone='" + getPhone() + "'" +
             "}";
     }
+
     
 
 

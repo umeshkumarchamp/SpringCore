@@ -23,7 +23,7 @@
     <util:map map-class="java.util.LinkedHashMap" id="mycourses">
         <entry key="Spring Boot" value="8000"/>
         <entry key="Django" value="5000"/>
-        <entry key="Laravel" value="6000"/> 
+        <entry key="Laravel" value="6000"/>
         <entry key="NodeJs" value="7000"/>
     </util:map>
 
@@ -35,6 +35,11 @@
         <prop key="url">pgsql:jdbc://localhost:8080/database</prop>
     </util:properties>
 
+    <!-- Standalone Set -->
+    <util:set set-class="java.util.LinkedHashSet" id="myphones">
+        <value>1234567890</value>
+        <value>9876543210</value>
+    </util:set>
 
     <bean class="com.springcore.standalone_collection.Model.Person" name="person1">
         <property name="friends" ref="mybestfriends"/>
@@ -47,6 +52,7 @@
         <property name="friends" ref="mybestfriends"/>
         <property name="courses" ref="mycourses"/>
         <property name="props" ref="dbconfig"/>
+        <property name="phone" ref="myphones"/>
     </bean>
 
 

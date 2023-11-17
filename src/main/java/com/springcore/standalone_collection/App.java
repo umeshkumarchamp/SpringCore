@@ -19,6 +19,8 @@ public class App {
         System.out.println("Friends : " +p2.getFriends());
         System.out.println("Courses : " +p2.getCourses());
         System.out.println("Properties : " +p2.getProps());
+        System.out.println("Phone : " +p2.getPhone());
+
         System.out.println(p2.getCourses().getClass().getName());
     }
 }
